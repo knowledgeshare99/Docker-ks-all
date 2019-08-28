@@ -1,0 +1,5 @@
+FROM debian:stable
+MAINTAINER knowledgeshare99 < knowledgeshare99@gmail.com>
+RUN yum update
+#subsequeent command
+RUN yum upgrade

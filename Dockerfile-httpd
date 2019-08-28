@@ -1,0 +1,22 @@
+FROM centos:7
+
+MAINTAINER Knowledgeshare99
+
+LABEL Remarks="This is a dockerfile example for Linux system"
+
+RUN yum -y update && yum -y install httpd && yum clean all
+
+COPY httpd.conf /etc/httpd/conf/httpd.conf
+
+ADD data/flange_template_1253.tar.gz /var/www/html/
+
+EXPOSE 80
+
+ENV HOME /root
+
+WORKDIR /root
+
+ENTRYPOINT ["ping"]
+
+CMD ["google.com"]
+

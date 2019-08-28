@@ -1,0 +1,8 @@
+FROM centos:latest
+MAINTAINER knowledgeshare99 < knowledgeshare99@gmail.com>
+
+RUN yum update -y && yum upgrade -y && yum install -y apache telenet ssh elinks openssl
+ENV MYVALUE myvarible-output
+EXPOSE 80
+EXPOSE 22
+CMD ["/usr/sbin/apache" , "D", "FOREGROUND"]
