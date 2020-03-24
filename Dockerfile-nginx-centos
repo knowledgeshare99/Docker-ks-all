@@ -1,0 +1,9 @@
+#This is a sample Image
+FROM centos:latest
+MAINTAINER knwoledgeshare99@gmail.com
+RUN yum update -y
+RUN yum install -y java nginx && echo "daemon off;" >> /etc/nginx/nginx.conf
+#ADD default /etc/nginx/sites-available/default
+EXPOSE 80
+CMD ["nginx"]
+#CMD ["echo","My custom Image created?"]
