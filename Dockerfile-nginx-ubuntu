@@ -1,0 +1,13 @@
+###### Starting Dockerfile creating ###########
+# Super simple example of a Dockerfile
+#
+FROM ubuntu
+MAINTAINER Knowledshare Group "knowledgeshare99@gmail.com"
+RUN apt-get update
+RUN apt-get install -y nginx
+#COPY index.html /var/www/html/
+#CMD ["/usr/sbin/httpd", "-D", "FOREGROUND"]
+EXPOSE 82
+#WORKDIR /home
+
+CMD ["echo", "This is my nginx image created with tag"]
