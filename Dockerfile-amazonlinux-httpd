@@ -1,0 +1,20 @@
+#This is my sample Dockerfile build
+
+FROM amazonlinux:latest
+MAINTAINER knowlegeshare99@gmail.com
+
+
+USER root
+RUN yum -y update 
+RUN yum -y install httpd
+
+WORKDIR /app
+
+ADD staticwebsitre-fliporg/* /var/www/html/
+EXPOSE 82
+
+#ADD index.html /app/www/html/index.html
+
+#ADD sample.war /app/bin/
+#CMD ["echo" , ""Hello World]
+CMD ["httpd","-D", "FOREGROUND"]
