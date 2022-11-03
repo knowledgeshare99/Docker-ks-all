@@ -1,0 +1,14 @@
+# this is my own docker file build
+FROM amazonlinux:latest
+MAINTAINER knwoledgeshare99
+
+RUN yum update -y && yum install -y httpd && yum install  curl wget -y
+
+WORKDIR /app
+
+ENV APACHE httpd_v2.6.7
+
+EXPOSE 80
+COPY index.html /var/www/html
+
+CMD ["/usr/sbin/httpd", "-D", "FOREGROUND"]
